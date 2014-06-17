@@ -3,82 +3,208 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Apigee TV</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
+
 <link rel="shortcut icon" href="images/fav.png" type="image/png" />
 <link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
 <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+
+
 </head>
 <body>
 
 <div id="page">
-
 	<div class="container1">
 
+		<!-- Left Section -->
+
 		<div class="boxA1">
-			<div class="boxes margin-btm" style="height:520px">
-				<a href="#" class="button1">Updates</a>
+			<center><img src="images/logo.png" align="middle" height=120/></center>
+			<div class="boxes-left margin-btm" style="height:490px">
+
 				<div class="details">
-					<!--<h1>Greeting!</h1> -->
-					<p>Here comes the <api>api</api><gee>gee</gee> TV! Watch out what's happening at Apigee!</p>
-				</div>
+					<!-- Start of Feeds 1 -->
+					<div id="nt-example1-container">
+						<ul id="nt-example1">
+						    <li>Apigee acquires Goolge!</li>
+						    <li>Apigee got a new internal website!</li>
+						    <li>Anshu offers a big treat to Abhijith at Taj!</li>
+						    <li>Abhijith accepts it!</li>
+						</ul>
+		                        </div>
+					<!-- End of Feeds 1 -->
+				</div><!-- /Details -->
+
+				<h3>What is happening at <api>api</api><gee>gee</gee>?</h3>
+
+				<div class="details">
+
+					<!-- Start of Feeds 2 -->
+					<div id="nt-example2-container">
+						<ul id="nt-example2">
+						    <li data-infos="Anshu offers a big treat to Abhijith at Taj!"></i>
+						    	Anshu Offers Treat!
+						    </li>
+						    <li data-infos="Abhijith accepted the offer so gladly!"></i>
+						    	Abhijith Accepts it!
+						    </li>
+						    <li data-infos="Planning to have at least one non-veg dish (not egg!) everyday!">
+						    	Non-Veg Dishes
+						    </li>
+						</ul>
+
+		                		<div id="nt-example2-infos-container">
+			                		<div id="nt-example2-infos-triangle"></div>
+							<div id="nt-example2-infos" class="row">
+								<div class="infos-text">Anshu offers a big treat to Abhijith at Taj!</div>
+							</div>
+		                		</div>
+		            		</div>
+					<!-- End of Feeds 2 -->
+				
+				</div><!-- /Details -->
+
 
 			</div>
-			<!--
-			<div class="boxes">
-				<img src="images/img.jpg" width="280" height="300"/>
-				<div class="details">
-					<h1>Test</h1>
-					<p>Test Content</p>
-				</div>
-				<a href="#" class="button1">BUTTON</a>
-			</div>
-			-->
 		</div>
-		<div class="boxB1">
-			<div class="boxesT">
-				<center><img src="images/logo.png" align="middle" height=120/></center>
-			</div>
 
-			<div class="boxes" style="height:400px">
-				<div class="details">
-					<h1>Real Time Graphs</h1>
-				</div>
-			</div>
-			<!--
-			<div class="boxes">
-				<img src="images/test.jpg" width="400" height="270"/>
-				<div class="details">
-					<h11>Test</h11>
-					<p style="color: #188A84" >Test Content</p>
-				</div>
-				<a href="#" class="button2">BUTTON</a>
-			</div>
-			-->
-			
-		</div>
+
+		<!-- Right Section -->
 		<div class="boxC1">
-			<div class="boxes" style="height:520px">
+			<div class="boxes" style="height:610px">
+
 				<div class="details">
-					<p>Space for Social Media posts!</p>
+					<p>Space for Social Media posts! And <api>api</api><gee>gee</gee> real time graphs!</p>
 				</div>
+
 			</div>			
 		</div>
 
+	</div> <!-- Container1 End -->
+</div> <!-- Page End -->
 
-	</div>
-	<div class="container1">
-		<div class="boxD1">
-			<div class="boxes" style="height:50px">
-				<div class="details">
-					<p>Space for Tweets!</p>
-				</div>
-			</div>
-		<div>
-	<div>
-</div>
+
+
+	<!-- Core JavaScript
+    ================================================== -->
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/prism.js"></script>
+    <script src="assets/js/jquery.mCustomScrollbar.min.js"></script>
+    <script src="jquery.newsTicker.js"></script>
+    <script>
+    		$('a[href*=#]').click(function(e) {
+			    var href = $.attr(this, 'href');
+			    if (href != "#") {
+				    $('html, body').animate({
+				        scrollTop: $(href).offset().top - 81
+				    }, 500);
+				}
+				else {
+					$('html, body').animate({
+				        scrollTop: 0
+				    }, 500);
+				}
+			    return false;
+			});
+
+    		$(window).load(function(){
+	            $('code.language-javascript').mCustomScrollbar();
+	        });
+            var nt_title = $('#nt-title').newsTicker({
+                row_height: 40,
+                max_rows: 1,
+                duration: 3000,
+                pauseOnHover: 0
+            });
+            var nt_example1 = $('#nt-example1').newsTicker({
+                row_height: 80,
+                max_rows: 3,
+                duration: 4000,
+                prevButton: $('#nt-example1-prev'),
+                nextButton: $('#nt-example1-next')
+            });
+            var nt_example2 = $('#nt-example2').newsTicker({
+                row_height: 60,
+                max_rows: 1,
+                speed: 300,
+                duration: 6000,
+                prevButton: $('#nt-example2-prev'),
+                nextButton: $('#nt-example2-next'),
+                hasMoved: function() {
+                	$('#nt-example2-infos-container').fadeOut(200, function(){
+	                	$('#nt-example2-infos .infos-hour').text($('#nt-example2 li:first span').text());
+	                	$('#nt-example2-infos .infos-text').text($('#nt-example2 li:first').data('infos'));
+	                	$(this).fadeIn(400);
+	                });
+                },
+                pause: function() {
+                	$('#nt-example2 li i').removeClass('fa-play').addClass('fa-pause');
+                },
+                unpause: function() {
+                	$('#nt-example2 li i').removeClass('fa-pause').addClass('fa-play');
+                }
+            });
+            $('#nt-example2-infos').hover(function() {
+                nt_example2.newsTicker('pause');
+            }, function() {
+                nt_example2.newsTicker('unpause');
+            });
+            var state = 'stopped';
+            var speed;
+            var add;
+            var nt_example3 = $('#nt-example3').newsTicker({
+                row_height: 80,
+                max_rows: 1,
+                duration: 0,
+                speed: 10,
+                autostart: 0,
+                pauseOnHover: 0,
+                hasMoved: function() {
+                	if (speed > 700) {
+                		$('#nt-example3').newsTicker("stop");
+                		console.log('stop')
+                		$('#nt-example3-button').text("RESULT: " + $('#nt-example3 li:first').text().toUpperCase());
+                		setTimeout(function() {
+                			$('#nt-example3-button').text("START");
+                			state = 'stopped';
+                		},2500);
+                		
+                	}
+                	else if (state == 'stopping') {
+                		add = add * 1.4;
+                		speed = speed + add;
+                		console.log(speed)
+                		$('#nt-example3').newsTicker('updateOption', "duration", speed + 25);
+                		$('#nt-example3').newsTicker('updateOption', "speed", speed);
+                	}
+                }
+            });
+            
+            $('#nt-example3-button').click(function(){
+            	if (state == 'stopped') {
+	            	state = 'turning';
+	            	speed = 1;
+	            	add = 1;
+	            	$('#nt-example3').newsTicker('updateOption', "duration", 0);
+	            	$('#nt-example3').newsTicker('updateOption', "speed", speed);
+	            	nt_example3.newsTicker('start');
+	            	$(this).text("STOP");
+	            }
+	            else if (state == 'turning') {
+	            	state = 'stopping';
+	            	$(this).text("WAITING...");
+	            }
+            });
+        </script>
 
 
 </body>

@@ -963,7 +963,25 @@
 		background: #000000;
 	}
 
+/* For Left Section */
 
+	.boxes-left
+	{
+		background: transparent;
+		margin-bottom: 20px;
+	}
+	
+	.boxes-left .margin-btm
+	{
+		margin-bottom: 20px;
+	}
+	
+	.boxes-left .details
+	{
+		display: block;
+	}
+
+/* For Others Section */
 	.boxes
 	{
 		background: #fff;
@@ -978,29 +996,20 @@
 	.boxes .details
 	{
 		display: block;
-		padding: 1em 2em 1em 2em;
+		padding: 1em 1em 1em 1em;
 	}
 	
 	
-	.boxA1,
-	.boxC1
+	.boxA1
 	{
-		width: 280px;
-	}
-
-	.boxB1
-	{
-		width:600px;
-	}
-
-	.boxA1,
-	.boxB1
-	{
+		width: 480px;
 		float: left;
 		margin-right: 20px;
-	}	
+	}
+
 	.boxC1
 	{
+		width: 700px;
 		float: right;
 	}
 
